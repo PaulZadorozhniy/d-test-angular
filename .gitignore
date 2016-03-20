@@ -1,7 +1,8 @@
 node_modules/
 bower_components/
-coverage/
-.sass-cache/
+*.log
 .idea/
 .tmp/
+
+build/
 dist/
