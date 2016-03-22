@@ -1,28 +1,6 @@
 'use strict';
 
-export default function facultyRouter($stateProvider) {
-  'ngInject';
+import RouteStatesFactory from '../../../common/services/RouteStatesFactory';
 
-  $stateProvider
-    .state('admin.faculty',{
-      url: '/faculty',
-      templateUrl: 'app/components/admin/faculty/faculty.template.html',
-      controller: 'FacultyController',
-      controllerAs: 'vm'
-    })
-    .state('admin.faculty.view', {
-      url: '/view',
-      controller: 'FacultyViewController',
-      controllerAs: 'vm'
-    })
-    .state('admin.faculty.create', {
-      url: '/create',
-      controller: 'FacultyCreateController',
-      controllerAs: 'vm'
-    })
-    .state('admin.faculty.edit', {
-      url: '/edit',
-      controller: 'FacultyEditController',
-      controllerAs: 'vm'
-    });
-}
+let facultyRouter = RouteStatesFactory('Faculty');
+export default facultyRouter;
