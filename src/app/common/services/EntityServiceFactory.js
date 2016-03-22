@@ -2,14 +2,13 @@
 
 export default function EntityServiceFactory(entityName) {
   return class {
-    constructor ($log, $http, $q) {
+    constructor ($log, $http, $q, apiHost) {
       'ngInject';
 
       this.$log = $log;
       this.$q = $q;
       this.$http = $http;
-      // TODO: Substitute config property instead of hardcoded apihost
-      this.apiHost = 'http://ec2-54-69-82-91.us-west-2.compute.amazonaws.com/';
+      this.apiHost = apiHost;
       this.entity = entityName;
     }
 

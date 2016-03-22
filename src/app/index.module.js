@@ -20,6 +20,7 @@ angular.module('dTestAngular', [
 ])
   .constant('malarkey', malarkey)
   .constant('moment', moment)
+  .constant('apiHost', 'http://ec2-54-69-82-91.us-west-2.compute.amazonaws.com/')
   .config(config)
   .config(routerConfig)
   .run(runBlock)
