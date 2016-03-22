@@ -1,0 +1,24 @@
+<div layout="row">
+  <div class="depth-2 menu" flex="20" layout="column">
+    <md-toolbar layout="row" class="primary-bg">
+      <div class="md-toolbar-tools">
+        <span>Menu</span>
+      </div>
+    </md-toolbar>
+    <md-content >
+      <md-list class="md-dense">
+        <md-list-item class="md-1-line" ng-repeat="section in vm.sections">
+          <img src="http://lorempixel.com/100/100/cats" class="md-avatar">
+          <div class="md-list-item-text" layout="column">
+            <a ui-sref="{{ vm.states[section] }}" ng-bind="section"></a>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+
+  <div class="light-bg content" flex layout="column" ui-view>
+    Welcome to admin part of application
+  </div>
+
+</div>

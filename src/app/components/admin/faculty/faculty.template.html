@@ -1,0 +1,31 @@
+<div flex layout="column" class="light-bg content">
+  <div class="fab-section">
+    <md-fab-speed-dial>
+      <md-fab-trigger>
+        <md-button ng-click="vm.createFaculty()" aria-label="menu" class="md-fab md-warn">
+          <md-icon md-svg-src="assets/images/material-icons/add-ico.svg"></md-icon>
+        </md-button>
+      </md-fab-trigger>
+    </md-fab-speed-dial>
+  </div>
+  <md-toolbar layout="row" class="secondary-bg">
+    <div class="md-toolbar-tools">
+      <span>Faculties</span>
+    </div>
+  </md-toolbar>
+  <md-content>
+    <div layout="row" ng-hide="vm.faculties.length" layout-sm="column" flex class="preloader-backdrop" layout-align="space-around">
+      <md-progress-circular class="preloader" md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <md-list ng-show="vm.faculties.length">
+      <md-list-item class="md-3-line" ng-repeat="faculty in vm.faculties">
+        <div class="md-list-item-text" layout="column">
+          <h3 ng-bind="faculty.faculty_name"></h3>
+          <h4>ID: {{ faculty.faculty_id }}</h4>
+          <p ng-bind="faculty.faculty_description"></p>
+        </div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>
