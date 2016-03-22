@@ -13,6 +13,8 @@ import StudentService from './student/student.service';
 import UserService from './user/user.service';
 import LogService from './log/log.service';
 import ResultService from './result/result.service';
+import NavigationController from './navigation/navigation.controller';
+import FacultyController from './faculty/faculty.controller';
 
 let AdminModule = angular.module('dTestAngular.admin', []);
 
@@ -28,6 +30,8 @@ AdminModule.service('faculty', FacultyService)
   .service('student', StudentService)
   .service('user', UserService)
   .service('log', LogService)
-  .service('result', ResultService);
+  .service('result', ResultService)
+  .controller('NavigationController', NavigationController)
+  .controller('FacultyController', FacultyController);
 
 export default AdminModule;

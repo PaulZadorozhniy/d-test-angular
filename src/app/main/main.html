@@ -1,13 +1,41 @@
-<div layout="vertical" layout-fill>
-
-    <md-content>
-        <header>
-            <acme-navbar creation-date="main.creationDate"></acme-navbar>
-        </header>
-
-        <section class="jumbotron">
-            <h1>{{main.hello}}</h1>
-        </section>
+<div layout="row">
+  <div class="depth-2 menu" ng-controller="NavigationController as vm" flex="20" layout="column">
+    <md-toolbar layout="row" class="primary-bg">
+      <div class="md-toolbar-tools">
+        <span>Menu</span>
+      </div>
+    </md-toolbar>
+    <md-content >
+      <md-list class="md-dense">
+        <md-list-item class="md-1-line" ng-repeat="section in vm.sections">
+          <img src="http://lorempixel.com/100/100/cats" class="md-avatar">
+          <div class="md-list-item-text" layout="column">
+            <p ng-bind="section"></p>
+          </div>
+        </md-list-item>
+      </md-list>
     </md-content>
-
+  </div>
+  <div flex layout="column" class="light-bg content" ng-controller="FacultyController as vm">
+    <md-toolbar layout="row" class="secondary-bg">
+      <div class="md-toolbar-tools">
+        <span>Title</span>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <div layout="row" ng-hide="vm.faculties.length" layout-sm="column" flex class="preloader-backdrop" layout-align="space-around">
+        <md-progress-circular class="preloader" md-mode="indeterminate"></md-progress-circular>
+      </div>
+      <md-list ng-show="vm.faculties.length">
+        <md-list-item class="md-3-line" ng-repeat="faculty in vm.faculties">
+          <div class="md-list-item-text" layout="column">
+            <h3 ng-bind="faculty.faculty_name"></h3>
+            <h4>ID: {{ faculty.faculty_id }}</h4>
+            <p ng-bind="faculty.faculty_description"></p>
+          </div>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
 </div>
