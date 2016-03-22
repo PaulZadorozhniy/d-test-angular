@@ -1,3 +1,6 @@
+'use strict';
+
 import EntityServiceFactory from '../../../common/EntityServiceFactory';
 
-export let SpecialityService = EntityServiceFactory('Speciality');
+let SpecialityService = EntityServiceFactory('Speciality');
+export default SpecialityService;

@@ -4,7 +4,7 @@ import { config } from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
-import { FacultyService } from '../app/components/admin/admin.module';
+import AdminModule from './components/admin/admin.module';
 
 angular.module('dTestAngular', [
   'ngAnimate',
@@ -16,8 +16,7 @@ angular.module('dTestAngular', [
   'ui.router',
   'ngMaterial',
   'toastr',
-
-  'dTestAngular.admin'
+  AdminModule.name
 ])
   .constant('malarkey', malarkey)
   .constant('moment', moment)

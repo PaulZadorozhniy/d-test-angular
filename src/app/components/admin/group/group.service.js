@@ -2,5 +2,5 @@
 
 import EntityServiceFactory from '../../../common/EntityServiceFactory';
 
-let FacultyService = EntityServiceFactory('Faculty');
-export default FacultyService;
+let GroupService = EntityServiceFactory('Group');
+export default GroupService;

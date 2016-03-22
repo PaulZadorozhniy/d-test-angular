@@ -1,11 +1,11 @@
 export class MainController {
-  constructor (faculty, speciality, $log) {
+  constructor (faculty, student, $log) {
     'ngInject';
 
     this.hello = 'Hello';
     this.creationDate = new Date();
 
-    speciality.getRecords().then(function (result) {
+    student.getRecords().then(function (result) {
       $log.log(result);
     });
 
