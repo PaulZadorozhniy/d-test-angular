@@ -16,4 +16,4 @@ export default class FacultyController {
   facultiesIsNotEmpty() {
     return this.faculties.length > 0;
   }
-};
+}
