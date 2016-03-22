@@ -82,3 +82,47 @@ section.jumbotron h1 {
   float: right;
   width: 100px;
 }
+
+.depth-2 {
+  z-index: 200;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.primary-bg {
+  background-color: #106CC8 !important;
+}
+
+.secondary-bg {
+  background-color: #588eff !important;
+}
+
+.light-bg {
+  background-color: #f6f6f6 !important;
+}
+
+.menu {
+  height: 100vh;
+}
+
+.content {
+  height: 100vh;
+}
+
+.preloader-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  background-color: rgba(246, 246, 246, 0.9);
+  transition: all .3s ease-out;
+}
+
+.preloader {
+  margin-top: 20%;
+}
+
+.fab-section {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
