@@ -1,5 +1,7 @@
-export function routerConfig ($stateProvider, $urlRouterProvider) {
+export function routerConfig ($stateProvider, $urlRouterProvider, $locationProvider) {
   'ngInject';
+
+  $locationProvider.html5Mode(true);
 
   $stateProvider
     //.state('home', {

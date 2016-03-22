@@ -13,7 +13,7 @@ import StudentService from './student/student.service';
 import UserService from './user/user.service';
 import LogService from './log/log.service';
 import ResultService from './result/result.service';
-import statesService from './navigation/statesService';
+import statesService from './navigation/states.service';
 
 import FacultyController from './faculty/faculty.controller';
 import AdminController from './admin.controller';
@@ -21,12 +21,14 @@ import navigationSectionsService from './navigation/navigation.service';
 
 import adminRouter from './admin.route';
 import facultyRouter from './faculty/faculty.route';
+import userRouter from './user/user.route';
 
 let AdminModule = angular.module('dTestAngular.admin', []);
 
 AdminModule
   .config(adminRouter)
   .config(facultyRouter)
+  .config(userRouter)
   .constant('statesService', statesService)
   .service('faculty', FacultyService)
   .service('speciality', SpecialityService)
