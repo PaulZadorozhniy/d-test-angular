@@ -8,26 +8,25 @@ export default function AdminRouteStatesFactory(entityName) {
     let normalizedNameInLower = entityFirstLetter.toLowerCase().concat(entityName.slice(1));
     let normalizedNameInUpper = entityFirstLetter.toUpperCase().concat(entityName.slice(1));
 
+    let basePath = `app/components/admin/${normalizedNameInLower}`;
+
     $stateProvider
       .state(`admin.${normalizedNameInLower}`,{
         url: `/${normalizedNameInLower}`,
-        templateUrl: `app/components/admin/${normalizedNameInLower}/${normalizedNameInLower}.template.html`,
+        templateUrl: `${basePath}/templates/${normalizedNameInLower}.template.html`,
         controller: `${normalizedNameInUpper}Controller`,
-        controllerAs: 'vm'
-      })
-      .state(`admin.${normalizedNameInLower}.view`, {
-        url: '/view',
-        controller: `${normalizedNameInUpper}ViewController`,
         controllerAs: 'vm'
       })
       .state(`admin.${normalizedNameInLower}.create`, {
         url: '/create',
-        controller: `${normalizedNameInUpper}CreateController`,
+        templateUrl: `${basePath}/templates/create.${normalizedNameInLower}.template.html`,
+        controller: `Create${normalizedNameInUpper}Controller`,
         controllerAs: 'vm'
       })
       .state(`admin.${normalizedNameInLower}.edit`, {
         url: '/edit',
-        controller: `${normalizedNameInUpper}EditController`,
+        templateUrl: `${basePath}//templates/edit.${normalizedNameInLower}.template.html`,
+        controller: `Edit${normalizedNameInUpper}Controller`,
         controllerAs: 'vm'
       });
   };

@@ -16,7 +16,7 @@ angular.module('dTestAngular', [
   'ui.router',
   'ngMaterial',
   'toastr',
-  AdminModule.name
+  AdminModule
 ])
   .constant('malarkey', malarkey)
   .constant('moment', moment)

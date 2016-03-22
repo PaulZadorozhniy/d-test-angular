@@ -10,7 +10,7 @@
         <md-list-item class="md-1-line" ng-repeat="section in vm.sections">
           <img src="http://lorempixel.com/100/100/cats" class="md-avatar">
           <div class="md-list-item-text" layout="column">
-            <a ui-sref="{{ vm.states[section] }}" ng-bind="section"></a>
+            <a ui-sref="{{ vm.states[section].index }}" ng-bind="section"></a>
           </div>
         </md-list-item>
       </md-list>

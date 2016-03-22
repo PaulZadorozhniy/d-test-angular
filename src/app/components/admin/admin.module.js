@@ -1,44 +1,45 @@
 'use strict';
 
-import FacultyService from './faculty/faculty.service';
-import SpecialityService from './speciality/speciality.service';
-import GroupService from './group/group.service';
-import SubjectService from './subject/subject.service';
-import TestService from './test/test.service';
-import TestDetailService from './testDetail/testDetail.service';
-import TimeTableService from './timeTable/timeTable.service';
-import QuestionService from './question/question.service';
-import AnswerService from './answer/answer.service';
-import StudentService from './student/student.service';
-import UserService from './user/user.service';
-import LogService from './log/log.service';
-import ResultService from './result/result.service';
-import statesService from './navigation/states.service';
-import navigationSectionsService from './navigation/navigation.service';
+import FacultyModule from './faculty';
 
-import FacultyController from './faculty/faculty.controller';
+import SpecialityService from './speciality/services/speciality.service.js';
+import GroupService from './group/services/group.service.js';
+import SubjectService from './subject/services/subject.service.js';
+import TestService from './test/services/test.service.js';
+import TestDetailService from './testDetail/services/testDetail.service.js';
+import TimeTableService from './timeTable/services/timeTable.service.js';
+import QuestionService from './question/services/question.service.js';
+import AnswerService from './answer/services/answer.service.js';
+import StudentService from './student/services/student.service.js';
+import UserService from './user/services/user.service.js';
+import LogService from './log/services/log.service.js';
+import ResultService from './result/services/result.service.js';
+import statesService from './navigation/services/states.service.js';
+import navigationSectionsService from './navigation/services/navigation.service.js';
+
 import AdminController from './admin.controller';
-import GroupController from './group/group.controller';
-import SpecialityController from './speciality/speciality.controller';
+import GroupController from './group/controllers/group.controller.js';
+import SpecialityController from './speciality/controllers/speciality.controller.js';
 
 import adminRouter from './admin.route';
-import facultyRouter from './faculty/faculty.route';
 import userRouter from './user/user.route';
 import questionRouter from './question/question.route';
 import groupRouter from './group/group.route';
 import specialityRouter from './speciality/speciality.router';
 
-let AdminModule = angular.module('dTestAngular.admin', []);
+let AdminModule = angular.module('dTestAngular.admin', [
+  FacultyModule
+]);
+
+let moduleName = AdminModule.name;
 
 AdminModule
   .config(adminRouter)
-  .config(facultyRouter)
   .config(userRouter)
   .config(questionRouter)
   .config(groupRouter)
   .config(specialityRouter)
   .constant('statesService', statesService)
-  .service('faculty', FacultyService)
   .service('speciality', SpecialityService)
   .service('group', GroupService)
   .service('subject', SubjectService)
@@ -53,8 +54,9 @@ AdminModule
   .service('result', ResultService)
   .constant('navigationSectionsService', navigationSectionsService)
   .controller('AdminController', AdminController)
-  .controller('FacultyController', FacultyController)
   .controller('GroupController', GroupController)
   .controller('SpecialityController', SpecialityController);
 
-export default AdminModule;
+
+// By Convention
+export default moduleName;

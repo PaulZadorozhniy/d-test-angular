@@ -1,10 +1,13 @@
 'use strict';
 
 export default class FacultyController {
-  constructor(faculty) {
+  constructor(faculty, $state, statesService) {
     'ngInject';
 
     let vm = this;
+
+    vm.statesService = statesService;
+    vm.$state = $state;
     vm.faculties = [];
 
     faculty.getRecords().then(function (faculties) {
@@ -18,6 +21,6 @@ export default class FacultyController {
   }
 
   createFaculty() {
-
+    this.$state.go(this.statesService.Faculties.create);
   }
 }
