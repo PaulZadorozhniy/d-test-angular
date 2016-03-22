@@ -1,0 +1,23 @@
+<md-dialog aria-label="Create Faculty">
+  <form name="createFaculty">
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <div class="md-headline blue-text">New Faculty</div>
+      </div>
+    </md-toolbar>
+    <md-dialog-content flex>
+      <md-input-container class="md-block">
+        <label>Name</label>
+        <input name="facultyName" ng-model="vm.name" type="text">
+      </md-input-container>
+      <md-input-container class="md-block">
+        <label>Description</label>
+        <input name="facultyDescription" ng-model="vm.Description" type="text">
+      </md-input-container>
+      <md-button ng-click="vm.createFaculty()">Create</md-button>
+      <md-button ng-click="vm.cancel()">Cancel</md-button>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+
+

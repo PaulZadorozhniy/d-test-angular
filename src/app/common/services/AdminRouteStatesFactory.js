@@ -21,7 +21,15 @@ export default function AdminRouteStatesFactory(entityName) {
         url: '/create',
         templateUrl: `${basePath}/templates/create.${normalizedNameInLower}.template.html`,
         controller: `Create${normalizedNameInUpper}Controller`,
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        onEnter: function($mdDialog) {
+          $mdDialog.show({
+            controller: `Create${normalizedNameInUpper}Controller`,
+            controllerAs: 'vm',
+            templateUrl: `${basePath}/templates/create.${normalizedNameInLower}.template.html`,
+            clickOutsideToClose: false
+          });
+        }
       })
       .state(`admin.${normalizedNameInLower}.edit`, {
         url: '/edit',
