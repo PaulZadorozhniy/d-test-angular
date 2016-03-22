@@ -2,5 +2,5 @@
 
 import AdminRouteStatesFactory from '../../../common/services/AdminRouteStatesFactory';
 
-let UserRouter = AdminRouteStatesFactory('User');
-export default UserRouter;
+let groupRouter = AdminRouteStatesFactory('Group');
+export default groupRouter;

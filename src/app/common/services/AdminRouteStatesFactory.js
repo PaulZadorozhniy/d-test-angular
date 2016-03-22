@@ -1,6 +1,6 @@
 'use strict';
 
-export default function RouteStatesFactory(entityName) {
+export default function AdminRouteStatesFactory(entityName) {
   return function ($stateProvider) {
     'ngInject';
 
@@ -31,4 +31,4 @@ export default function RouteStatesFactory(entityName) {
         controllerAs: 'vm'
       });
   };
-};
+}

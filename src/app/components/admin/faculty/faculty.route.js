@@ -1,6 +1,6 @@
 'use strict';
 
-import RouteStatesFactory from '../../../common/services/RouteStatesFactory';
+import AdminRouteStatesFactory from '../../../common/services/AdminRouteStatesFactory';
 
-let facultyRouter = RouteStatesFactory('Faculty');
+let facultyRouter = AdminRouteStatesFactory('Faculty');
 export default facultyRouter;

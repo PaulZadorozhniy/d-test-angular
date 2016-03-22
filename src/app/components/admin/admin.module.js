@@ -14,14 +14,19 @@ import UserService from './user/user.service';
 import LogService from './log/log.service';
 import ResultService from './result/result.service';
 import statesService from './navigation/states.service';
+import navigationSectionsService from './navigation/navigation.service';
 
 import FacultyController from './faculty/faculty.controller';
 import AdminController from './admin.controller';
-import navigationSectionsService from './navigation/navigation.service';
+import GroupController from './group/group.controller';
+import SpecialityController from './speciality/speciality.controller';
 
 import adminRouter from './admin.route';
 import facultyRouter from './faculty/faculty.route';
 import userRouter from './user/user.route';
+import questionRouter from './question/question.route';
+import groupRouter from './group/group.route';
+import specialityRouter from './speciality/speciality.router';
 
 let AdminModule = angular.module('dTestAngular.admin', []);
 
@@ -29,6 +34,9 @@ AdminModule
   .config(adminRouter)
   .config(facultyRouter)
   .config(userRouter)
+  .config(questionRouter)
+  .config(groupRouter)
+  .config(specialityRouter)
   .constant('statesService', statesService)
   .service('faculty', FacultyService)
   .service('speciality', SpecialityService)
@@ -45,6 +53,8 @@ AdminModule
   .service('result', ResultService)
   .constant('navigationSectionsService', navigationSectionsService)
   .controller('AdminController', AdminController)
-  .controller('FacultyController', FacultyController);
+  .controller('FacultyController', FacultyController)
+  .controller('GroupController', GroupController)
+  .controller('SpecialityController', SpecialityController);
 
 export default AdminModule;
